@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head><meta charset="utf-8"/></head>
+  <body>
+    <form action="/names" method="post">
+      名前：<input type="text" name="name"><br>
+      <input type="submit" value="登録">
+    </form>
+    <ul>
+      <% names.each do |e| %>
+        <li>
+        <%= e[:name] %>&nbsp;&nbsp;&nbsp;
+        <a href="/names/edit?id=<%= e[:id] %>">編集</a>
+        <a href="/names/delete?id=<%= e[:id] %>">削除</a>
+        </li>
+      <% end %>
+    </ul>
+  
+  </body>
+</html>
